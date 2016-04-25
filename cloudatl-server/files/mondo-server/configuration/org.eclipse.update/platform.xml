@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1447181007069" transient="false">
+	<site updateable="true" url="platform:/base/" enabled="true" policy="USER-EXCLUDE">
+		<feature id="org.hawk.core.feature" version="1.0.0.201511101804" url="features/org.hawk.core.feature_1.0.0.201511101804/">
+		</feature>
+		<feature id="org.hawk.neo4jv2.feature" version="1.0.0.201511101836" url="features/org.hawk.neo4jv2.feature_1.0.0.201511101836/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature" version="1.0.0.v20141221-2352" url="features/org.eclipse.ecf.filetransfer.httpclient4.ssl.feature_1.0.0.v20141221-2352/">
+		</feature>
+		<feature id="org.eclipse.ecf.core.feature" version="1.1.0.v20141221-2352" url="features/org.eclipse.ecf.core.feature_1.1.0.v20141221-2352/">
+		</feature>
+		<feature id="org.eclipse.epsilon.core.dependencies.feature" version="1.3.0.201511040832" url="features/org.eclipse.epsilon.core.dependencies.feature_1.3.0.201511040832/">
+		</feature>
+		<feature id="org.eclipse.equinox.core.feature" version="1.2.2.v20150203-1939" url="features/org.eclipse.equinox.core.feature_1.2.2.v20150203-1939/">
+		</feature>
+		<feature id="org.eclipse.emf.edit.ui" version="2.10.2.v20150123-0452" url="features/org.eclipse.emf.edit.ui_2.10.2.v20150123-0452/">
+		</feature>
+		<feature id="org.eclipse.platform" version="4.4.2.v20150204-1700" url="features/org.eclipse.platform_4.4.2.v20150204-1700/">
+		</feature>
+		<feature id="org.hawk.osgiserver.feature" version="1.0.0.201511101804" url="features/org.hawk.osgiserver.feature_1.0.0.201511101804/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.rcp.feature" version="1.2.0.v20140523-0116" url="features/org.eclipse.equinox.p2.rcp.feature_1.2.0.v20140523-0116/">
+		</feature>
+		<feature id="org.eclipse.bpmn2" version="1.0.0.201412192138" url="features/org.eclipse.bpmn2_1.0.0.201412192138/">
+		</feature>
+		<feature id="org.eclipse.core.runtime.feature" version="1.1.2.v20150203-1939" url="features/org.eclipse.core.runtime.feature_1.1.2.v20150203-1939/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.feature" version="3.9.2.v20141221-2352" url="features/org.eclipse.ecf.filetransfer.feature_3.9.2.v20141221-2352/">
+		</feature>
+		<feature id="org.eclipse.xsd" version="2.10.0.v20150123-0452" url="features/org.eclipse.xsd_2.10.0.v20150123-0452/">
+		</feature>
+		<feature id="org.eclipse.equinox.server.core" version="1.3.2.v20150203-1939" url="features/org.eclipse.equinox.server.core_1.3.2.v20150203-1939/">
+		</feature>
+		<feature id="org.hawk.emf.feature" version="1.0.0.201511101804" url="features/org.hawk.emf.feature_1.0.0.201511101804/">
+		</feature>
+		<feature id="org.tmatesoft.svnkit" version="1.8.11.r10483_v20150925_0010" url="features/org.tmatesoft.svnkit_1.8.11.r10483_v20150925_0010/">
+		</feature>
+		<feature id="org.eclipse.ecf.core.ssl.feature" version="1.0.0.v20141221-2352" url="features/org.eclipse.ecf.core.ssl.feature_1.0.0.v20141221-2352/">
+		</feature>
+		<feature id="org.hawk.epsilon.feature" version="1.0.0.201511101804" url="features/org.hawk.epsilon.feature_1.0.0.201511101804/">
+		</feature>
+		<feature id="org.hawk.svn.feature" version="1.0.0.201511101804" url="features/org.hawk.svn.feature_1.0.0.201511101804/">
+		</feature>
+		<feature id="uk.ac.york.mondo.integration.api.feature" version="1.0.0.201511101842" url="features/uk.ac.york.mondo.integration.api.feature_1.0.0.201511101842/">
+		</feature>
+		<feature id="org.eclipse.emf.edit" version="2.10.1.v20150123-0452" url="features/org.eclipse.emf.edit_2.10.1.v20150123-0452/">
+		</feature>
+		<feature id="fr.inria.atlanmod.mondo.integration.cloudatl.servlet.feature" version="0.0.0.201511101842" url="features/fr.inria.atlanmod.mondo.integration.cloudatl.servlet.feature_0.0.0.201511101842/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.extras.feature" version="1.2.0.v20150129-0838" url="features/org.eclipse.equinox.p2.extras.feature_1.2.0.v20150129-0838/">
+		</feature>
+		<feature id="org.hawk.emfresource.feature" version="1.0.0.201511101804" url="features/org.hawk.emfresource.feature_1.0.0.201511101804/">
+		</feature>
+		<feature id="org.eclipse.epsilon.core.feature" version="1.3.0.201511040832" url="features/org.eclipse.epsilon.core.feature_1.3.0.201511040832/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.core.feature" version="1.3.0.v20140523-0116" url="features/org.eclipse.equinox.p2.core.feature_1.3.0.v20140523-0116/">
+		</feature>
+		<feature id="org.eclipse.equinox.core.sdk" version="3.10.2.v20150203-1939" url="features/org.eclipse.equinox.core.sdk_3.10.2.v20150203-1939/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.ssl.feature" version="1.0.0.v20141221-2352" url="features/org.eclipse.ecf.filetransfer.ssl.feature_1.0.0.v20141221-2352/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.user.ui" version="2.2.0.v20150129-0838" url="features/org.eclipse.equinox.p2.user.ui_2.2.0.v20150129-0838/">
+		</feature>
+		<feature id="org.eclipse.emf.common" version="2.10.1.v20150123-0348" url="features/org.eclipse.emf.common_2.10.1.v20150123-0348/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.httpclient4.feature" version="3.9.2.v20141221-2352" url="features/org.eclipse.ecf.filetransfer.httpclient4.feature_3.9.2.v20141221-2352/">
+		</feature>
+		<feature id="org.eclipse.emf.ecore" version="2.10.2.v20150123-0348" url="features/org.eclipse.emf.ecore_2.10.2.v20150123-0348/">
+		</feature>
+		<feature id="org.eclipse.emf.ecore.edit" version="2.9.0.v20150123-0452" url="features/org.eclipse.emf.ecore.edit_2.9.0.v20150123-0452/">
+		</feature>
+		<feature id="org.eclipse.emf.common.ui" version="2.9.0.v20150123-0452" url="features/org.eclipse.emf.common.ui_2.9.0.v20150123-0452/">
+		</feature>
+		<feature id="org.hawk.ifc.feature" version="1.0.0.201511101836" url="features/org.hawk.ifc.feature_1.0.0.201511101836/">
+		</feature>
+		<feature id="uk.ac.york.mondo.integration.hawk.emf.feature" version="1.0.0.201511101842" url="features/uk.ac.york.mondo.integration.hawk.emf.feature_1.0.0.201511101842/">
+		</feature>
+		<feature id="org.hawk.orientdb.feature" version="1.0.0.201511101804" url="features/org.hawk.orientdb.feature_1.0.0.201511101804/">
+		</feature>
+		<feature id="org.eclipse.rcp" version="4.4.2.v20150204-1700" url="features/org.eclipse.rcp_4.4.2.v20150204-1700/">
+		</feature>
+		<feature id="org.hawk.localfolder.feature" version="1.0.0.201511101804" url="features/org.hawk.localfolder.feature_1.0.0.201511101804/">
+		</feature>
+		<feature id="org.eclipse.emf.mapping" version="2.8.0.v20150123-0452" url="features/org.eclipse.emf.mapping_2.8.0.v20150123-0452/">
+		</feature>
+		<feature id="org.eclipse.emf.mapping.ecore" version="2.8.0.v20150123-0452" url="features/org.eclipse.emf.mapping.ecore_2.8.0.v20150123-0452/">
+		</feature>
+		<feature id="org.eclipse.help" version="2.0.103.v20150204-1700" url="features/org.eclipse.help_2.0.103.v20150204-1700/" plugin-identifier="org.eclipse.help.base">
+		</feature>
+		<feature id="org.eclipse.equinox.server.jetty" version="1.1.101.v20150129-1950" url="features/org.eclipse.equinox.server.jetty_1.1.101.v20150129-1950/">
+		</feature>
+		<feature id="uk.ac.york.mondo.integration.hawk.servlet.feature" version="1.0.0.201511101842" url="features/uk.ac.york.mondo.integration.hawk.servlet.feature_1.0.0.201511101842/">
+		</feature>
+		<feature id="org.eclipse.e4.rcp" version="1.3.101.v20150204-1353" url="features/org.eclipse.e4.rcp_1.3.101.v20150204-1353/">
+		</feature>
+		<feature id="uk.ac.york.mondo.integration.server.feature" version="1.0.0.201511101842" url="features/uk.ac.york.mondo.integration.server.feature_1.0.0.201511101842/">
+		</feature>
+		<feature id="org.eclipse.emf.validation" version="1.8.0.201405281429" url="features/org.eclipse.emf.validation_1.8.0.201405281429/">
+		</feature>
+		<feature id="org.hawk.bpmn.feature" version="1.0.0.201511101804" url="features/org.hawk.bpmn.feature_1.0.0.201511101804/">
+		</feature>
+	</site>
+</config>
