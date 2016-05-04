@@ -19,6 +19,7 @@ docker run -d -t --dns 127.0.0.1 -P  --name master -h master.mondo.com -w /root 
 # get the IP address of master container
 FIRST_IP=$(docker inspect --format="{{.NetworkSettings.IPAddress}}" master)
 
+echo "The master IP address is:"$FIRST_IP
 # delete old slave containers and start new slave containers
 i=1
 while [ $i -lt $N ]
