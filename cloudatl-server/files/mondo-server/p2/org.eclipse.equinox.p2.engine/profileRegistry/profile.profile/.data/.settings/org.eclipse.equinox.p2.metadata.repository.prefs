@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_.eclipseextension/description=
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_.eclipseextension/enabled=true
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_.eclipseextension/isSystem=true
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_.eclipseextension/name=/home/atlanmod-17/git/hadoop-cluster-docker/cloudatl-server/files/mondo-server/.eclipseextension
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_.eclipseextension/provider=
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_.eclipseextension/type=org.eclipse.equinox.p2.extensionlocation.metadataRepository
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_.eclipseextension/uri=file\:/home/atlanmod-17/git/hadoop-cluster-docker/cloudatl-server/files/mondo-server/.eclipseextension
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_.eclipseextension/version=1
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_configuration_org.eclipse.osgi_166_data_listener_1925729951/description=
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_configuration_org.eclipse.osgi_166_data_listener_1925729951/isSystem=true
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_configuration_org.eclipse.osgi_166_data_listener_1925729951/name=dropins
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_configuration_org.eclipse.osgi_166_data_listener_1925729951/provider=
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_configuration_org.eclipse.osgi_166_data_listener_1925729951/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_configuration_org.eclipse.osgi_166_data_listener_1925729951/uri=file\:/home/atlanmod-17/git/hadoop-cluster-docker/cloudatl-server/files/mondo-server/configuration/org.eclipse.osgi/166/data/listener_1925729951/
+repositories/file\:_home_atlanmod-17_git_hadoop-cluster-docker_cloudatl-server_files_mondo-server_configuration_org.eclipse.osgi_166_data_listener_1925729951/version=1

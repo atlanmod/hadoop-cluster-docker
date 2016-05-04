@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.equinox.server.core"
+      label="%featureName"
+      version="1.3.2.v20150203-1939"
+      provider-name="%providerName">
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="org.eclipse.osgi"
+         download-size="1233"
+         install-size="2622"
+         version="3.10.2.v20150203-1939"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.osgi.services"
+         download-size="88"
+         install-size="141"
+         version="3.4.0.v20140312-2051"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.common"
+         download-size="104"
+         install-size="192"
+         version="3.6.200.v20130402-1505"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.ds"
+         download-size="189"
+         install-size="392"
+         version="1.4.200.v20131126-2331"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.util"
+         download-size="75"
+         install-size="139"
+         version="1.0.500.v20130404-1337"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.jobs"
+         download-size="95"
+         install-size="187"
+         version="3.6.1.v20141014-1248"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.registry"
+         download-size="178"
+         install-size="372"
+         version="3.5.400.v20140428-1507"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.http.registry"
+         download-size="44"
+         install-size="85"
+         version="1.1.300.v20130402-1529"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.simpleconfigurator"
+         download-size="42"
+         install-size="79"
+         version="1.1.0.v20131217-1203"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.osgi.compatibility.state"
+         download-size="236"
+         install-size="578"
+         version="1.0.1.v20140709-1414"
+         fragment="true"
+         unpack="false"/>
+
+</feature>
