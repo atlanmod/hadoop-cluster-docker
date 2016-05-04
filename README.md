@@ -3,7 +3,7 @@ Scripts adapted from  [kiwenlau/hadoop-cluster-docker](https://github.com/kiwenl
 Informations about how to use this repository will be provided soon.
 
 # Organization 
-This project keeps the same organization in the original one, excepting for the the **hadoop-base** image that is extended with hbase in addition to hadoop. 
+This project keeps the same organization as in the original one, excepting for the  **hadoop-base** image that is extended with hbase installation in addition to hadoop. 
 
 # Content and description 
 The repository contains 4 docker images. 
