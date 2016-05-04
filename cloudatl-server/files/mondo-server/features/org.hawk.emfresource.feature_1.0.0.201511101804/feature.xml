@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.hawk.emfresource.feature"
+      label="Hawk Local EMF Resource Feature"
+      version="1.0.0.201511101804"
+      provider-name="University of York">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="https://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License - v 1.0
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.emf.ecore" version="2.10.2" match="greaterOrEqual"/>
+      <import plugin="org.hawk.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.hawk.graph" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.slf4j.api" version="1.7.2" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.hawk.emfresource"
+         download-size="329"
+         install-size="398"
+         version="1.0.0.201511101804"/>
+
+</feature>
