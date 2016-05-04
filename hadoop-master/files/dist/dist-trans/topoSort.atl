@@ -1,0 +1,67 @@
+-- @atlcompiler emftvm
+-- @nsURI S=http://fr.inria.atlanmod/dag
+
+-- @author Amine Benelallma
+
+module topoSort;
+
+create OUT: MM from IN: MM;
+
+helper context  MM!Edge def : isRedundant() : Boolean = 
+	let v_to : MM!Vertex= self.to 
+		in  let outgoings : Sequence(MM!Edge) = self.from.outgoing-> reject(e | e = self)
+			in 	-- test if there exist duplicated edges between
+				if (outgoings -> collect (out|out.to) -> flatten()-> includes(v_to)) then
+					true.debug('Existing duplicated edges')
+				else 
+					if outgoings -> isEmpty() then -- the current edge should not be the only outgoing edge
+						outgoings -> forAll(e | not thisModule.visitable(e,v_to))
+					else 
+						false
+					endif
+				endif
+				;
+
+helper def : visitable(ed : MM!Edge, v_to : MM!Vertex) : Boolean = 
+	let outgoings : Sequence(MM!Edge) = ed.from.outgoing-> reject(e | e = ed)
+		in
+	if ed.to = v_to then
+		true.debug(' Redundant edge : '+ed.toString())
+	else if outgoings -> isEmpty() then -- the current edge should not be the only outgoing edge
+				outgoings -> forAll(e | not thisModule.visitable(e,v_to)) 
+		else 
+			false.debug(' NOT redundant edge : '+ed.toString())
+		endif
+	endif;
+			
+-- Copy DAG
+rule DAG {
+	from 
+		s : MM!DAG
+	to 
+		t : MM!DAG
+}
+
+-- Copy Vertex
+rule Vertex {
+	from 
+		s: MM!Vertex
+	to 
+		t : MM!Vertex (
+			id <- s.id
+			)
+}
+
+-- edge-ends (from/to) assingnment is delegated to this rule to prevent the use of lazy rules
+-- Copy edges except for redundant ones
+rule Edge {
+	from 
+		s : MM!Edge (not s.isRedundant())
+	to t : MM!Edge (
+			id <- s.id,
+			from <- s.from,
+			to <- s.to
+			)
+		
+}
+

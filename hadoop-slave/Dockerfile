@@ -1,4 +1,4 @@
-FROM amineben/hadoop-base
+FROM amineben/hadoop-base:0.2.0
 
 MAINTAINER Amine BENELALLAM <amine.benelallam@inria.fr>
 
@@ -21,6 +21,6 @@ mv /tmp/regionservers $HBASE_CONF/regionservers && \
 mv /tmp/start-ssh-serf.sh ~/start-ssh-serf.sh && \
 chmod +x ~/start-ssh-serf.sh
 
-EXPOSE 22 7373 7946 9000 50010 50020 50070 50075 50090 50475 8025 8030 8031 8032 8033 8040 8034 8042 8060 8080 8088 50060 60010 60030 8085 2181 60000 60020
+
 
 CMD '/root/start-ssh-serf.sh'; 'bash'

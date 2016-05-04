@@ -1,17 +1,24 @@
-FROM amineben/hadoop-base
+FROM amineben/hadoop-base:0.2.0
 
 MAINTAINER Amine BENELALLAM <amine.benelallam@inria.fr>
 
+# Install zip and sendemail packages
+#RUN apt-get --assume-yes install zip 
+#RUN apt-get --assume-yes install install libio-socket-ssl-perl libnet-ssleay-perl sendemail
 # move all configuration files into container
 ADD files/* /tmp/
 ADD files/dist /root/dist
- 
+
+RUN ls -la --color /tmp/ && ls -la --color /usr/local/hbase/
 ENV HADOOP_INSTALL /usr/local/hadoop
 ENV HBASE_INSTALL /usr/local/hbase
 
 RUN mkdir -p ~/hdfs/namenode && \ 
 mkdir -p ~/hdfs/datanode && \
 mkdir $HADOOP_INSTALL/logs
+
+RUN echo "alias ls='ls -la --color'" >> ~/.bashrc &&\ 
+echo "alias cls='`printf '\033c'`'" >> ~/.bashrc
 
 RUN mv /tmp/hdfs-site.xml $HADOOP_INSTALL/etc/hadoop/hdfs-site.xml && \ 
 mv /tmp/core-site.xml $HADOOP_INSTALL/etc/hadoop/core-site.xml && \
@@ -26,17 +33,28 @@ mv /tmp/stop-hadoop.sh ~/stop-hadoop.sh && \
 mv /tmp/run-wordcount.sh ~/run-wordcount.sh && \ 
 mv /tmp/start-ssh-serf.sh ~/start-ssh-serf.sh
 
+#create a symlink to libs 
+RUN ln -s ~/dist/dist-trans/libs ~/dist/dist-gen/libs
+
+#chmod bash files 
 RUN chmod +x ~/start-hadoop.sh && \
 chmod +x ~/stop-hadoop.sh && \
 chmod +x ~/run-wordcount.sh && \
 chmod +x ~/start-ssh-serf.sh && \
 chmod +x ~/dist/dist-gen/run.sh && \
 chmod +x ~/dist/dist-trans/run.sh && \
+chmod +x ~/dist/dist-trans/run-all.sh && \
+chmod +x ~/dist/dist-trans/experiments-data/average.sh && \
+chmod +x ~/dist/dist-trans/experiments-data/gen-data.sh && \
+chmod +x ~/dist/dist-trans/experiments-data/gen-all-data.sh && \
+chmod +x ~/dist/dist-trans/experiments-data/merge-data.sh && \
+chmod +x ~/dist/dist-trans/experiments-data/speedup.sh && \
+chmod +x ~/dist/dist-trans/experiments-data/boxplotter.sh && \
 chmod 1777 tmp
 
 # format namenode
 RUN /usr/local/hadoop/bin/hdfs namenode -format
 
-EXPOSE 22 7373 7946 9000 50010 50020 50070 50075 50090 50475 8025 8030 8031 8032 8033 8034 8040  8042 8060 8080 8088 50060 60010 60030 8085 2181 60000 60020
+
 
 CMD '/root/start-ssh-serf.sh'; 'bash'

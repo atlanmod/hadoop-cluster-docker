@@ -8,7 +8,9 @@ if [ $# = 0 ]
 then
 	N=3
 fi
-	
+
+echo "stopping all the containers running the hadoop-master/slave images"
+docker ps -a | grep  amineben/hadoop-* | awk '{print $1 }' | xargs -I {} docker rm -f {}  
 
 # delete old master container and start new master container
 docker rm -f master &> /dev/null
