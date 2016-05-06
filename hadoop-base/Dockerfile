@@ -22,11 +22,6 @@ rm hadoop-2.6.0.tar.gz
 # download native library
 RUN mkdir -p /tmp/native
 RUN curl -Ls http://dl.bintray.com/sequenceiq/sequenceiq-bin/hadoop-native-64-2.6.0.tar | tar -x -C /tmp/native
-# adding configuration files
-ADD files/* /usr/local/
-
-# display the content of /usr/local
-RUN ls -la /usr/local/
 
 # set java environment variable 
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64 
@@ -39,20 +34,27 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
 mv /usr/local/ssh_config ~/.ssh/config && \
 sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
+# Fixing ssh config
+RUN sed  -i "/^[^#]*UsePAM/ s/.*/#&/"  /etc/ssh/sshd_config
+RUN echo "UsePAM no" >> /etc/ssh/sshd_config
+RUN echo "Port 2122" >> /etc/ssh/sshd_config
+
+
 #install hadoop 2.6.0/hbase
 RUN ln -s /usr/local/hadoop-2.6.0 /usr/local/hadoop && \
 ln -s /usr/local/hbase-0.98.13-hadoop2 /usr/local/hbase && \
 rm -rf /usr/local/hadoop/lib/native && \
-mv /tmp/native /usr/local/hadoop/lib && \
+
+# adding configuration files
+ADD files/* /usr/local/
+
+RUN mv /tmp/native /usr/local/hadoop/lib && \
 mv /usr/local/bashrc ~/.bashrc && \
 mv /usr/local/hadoop-env.sh /usr/local/hadoop/etc/hadoop/hadoop-env.sh &&\
 mv /usr/local/hbase-env.sh /usr/local/hbase/conf/hbase-env.sh
 
 
-# Fixing ssh config
-RUN sed  -i "/^[^#]*UsePAM/ s/.*/#&/"  /etc/ssh/sshd_config
-RUN echo "UsePAM no" >> /etc/ssh/sshd_config
-RUN echo "Port 2122" >> /etc/ssh/sshd_config
+
 
 
 ##exposing Hadoop & hbase ports

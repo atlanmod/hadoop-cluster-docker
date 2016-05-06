@@ -55,6 +55,4 @@ chmod 1777 tmp
 # format namenode
 RUN /usr/local/hadoop/bin/hdfs namenode -format
 
-
-
 CMD '/root/start-ssh-serf.sh'; 'bash'
