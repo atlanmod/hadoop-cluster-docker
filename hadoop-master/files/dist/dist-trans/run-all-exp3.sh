@@ -25,7 +25,7 @@ declare -a sizeModels=( '100' '1000' '2000' '5000' '10000' )
 declare -a mappers=( '4' '8' '16' )
 #experiments folder
 EXP=experiments-data-3
-JAVA_OPTS="-XX:NewSize=1g -XX:SurvivorRatio=8 -Xms1g -Xmx4g -XX:+AggressiveHeap -XX:MaxPermSize=512m"
+JAVA_OPTS="-XX:NewSize=1g -XX:SurvivorRatio=8 -Xms1g -Xmx4g"
 
 #####################################
 #classpath related arguments

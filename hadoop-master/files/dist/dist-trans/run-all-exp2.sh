@@ -33,7 +33,7 @@ EXP=experiments-data-2
 #classpath related arguments
 #####################################
 GENJARS=libs-gen/*.jar
-JAVA_OPTS="-XX:NewSize=1g -XX:SurvivorRatio=8 -Xms1g -Xmx4g -XX:+AggressiveHeap -XX:MaxPermSize=512m"
+JAVA_OPTS="-XX:NewSize=1g -XX:SurvivorRatio=8 -Xms1g -Xmx4g"
 echo 'Starting benchmark with classpath: '$GENJARS
 
 mkdir $EXP
