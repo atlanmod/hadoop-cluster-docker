@@ -15,7 +15,7 @@ rm  hbase-0.98.13-hadoop2-bin.tar.gz
 
 
 # download hadoop 
-RUN wget http://www.eu.apache.org/dist/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz
+RUN wget http://www.eu.apache.org/dist/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz &&\
 tar -xf hadoop-2.6.0.tar.gz -C /usr/local/ &&\
 rm hadoop-2.6.0.tar.gz
 
