@@ -22,7 +22,7 @@ image=$1
 function docker_rmi_original()
 {
 	echo -e "\nsudo docker rmi kiwenlau/$1:0.1.0"
-	docker rmi -f kiwenlau/$1:$tag
+	docker rmi -f kiwenlau/$1:0.1.0
 }
 
 function docker_rmi()
@@ -62,8 +62,8 @@ then
 	docker_rmi hadoop-base
 	docker_rmi cloudatl-client 
 	docker_rmi cloudatl-server
-	docker_rmi serf-dnsmasq
-	docker_build serf-dnsmasq
+	docker_rmi_original serf-dnsmasq
+	docker_build_original serf-dnsmasq
 	docker_rmi cloudatl-client 
 	docker_rmi cloudatl-server
 	docker_build hadoop-base
