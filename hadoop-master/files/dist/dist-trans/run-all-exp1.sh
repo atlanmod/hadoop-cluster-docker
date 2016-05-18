@@ -20,12 +20,12 @@ density=6 # density of the graph
 #declare -a numModels=( '1' '1' '1' '1' )
 # average size of models  
 #sizeModels=(1000^6)
-declare -a sizeModels=( '1000' '1000' '2000' '5000' '10000' )
+declare -a sizeModels=( '1000' '2000' '5000' '10000' )
 #sizeModels=(1000^6)
 declare -a mappers=( '1' '2' '4' '8' )
 #experiments folder
 EXP=experiments-data
-JAVA_OPTS="-XX:NewSize=1g -XX:SurvivorRatio=8 -Xms1g -Xmx4g"
+JAVA_OPTS="-Xmx4g"
 
 #####################################
 #classpath related arguments
@@ -40,7 +40,7 @@ for index in `seq 0 $(( mLen-1))`
 	do 
 	echo 'generating  a model with average number of vertices equals to: ' ${sizeModels[$index]} 'and density '$density 
 
-	java $JAVA_OPTS -cp ../dist-gen/fr.inria.atlanmod.dag.jar:$HADOOP_CLASSPATH fr.inria.atlanmod.dag.instantiator.Launcher -u $suff -n 1 -s ${sizeModels[$index]} -v 0.1 -e $seed -r $density 2>/dev/null
+	java $JAVA_OPTS -cp ../dist-gen/fr.inria.atlanmod.dag.jar:$HADOOP_CLASSPATH fr.inria.atlanmod.dag.instantiator.Launcher -u $suff -n 1 -s ${sizeModels[$index]} -v 0.1 -e $seed -r $density
 
 	mkdir $EXP/${sizeModels[$index]}
 	#j=0	

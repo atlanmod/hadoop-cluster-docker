@@ -21,7 +21,7 @@ iter=3 # number of iteration per transformation
 declare -a denModels=(  '6' '12' '18' )
 # average size of models  
 #sizeModels=(1000)
-declare -a sizeModels=( '100' '1000' '2000' '5000' '1000' )
+declare -a sizeModels=( '100' '1000' '2000' '5000' '10000' )
 #sizeModels=(1000)
 declare -a mappers=8
 
@@ -33,7 +33,7 @@ EXP=experiments-data-2
 #classpath related arguments
 #####################################
 GENJARS=libs-gen/*.jar
-JAVA_OPTS="-XX:NewSize=1g -XX:SurvivorRatio=8 -Xms1g -Xmx4g"
+JAVA_OPTS="-Xmx4g"
 echo 'Starting benchmark with classpath: '$GENJARS
 
 mkdir $EXP
@@ -47,7 +47,7 @@ for index in `seq 0 $(( mLen-1))`
 	for den_i in `seq 0 $(( denLen-1 ))`
 		do
 		echo 'generating  a model with average number of vertices equals to: ' ${sizeModels[$index]} 'and density '${denModels[$den_i]} 
-		java $JAVA_OPTS -cp ../dist-gen/fr.inria.atlanmod.dag.jar:$HADOOP_CLASSPATH fr.inria.atlanmod.dag.instantiator.Launcher -u $suff -n 1 -s ${sizeModels[$index]} -v 0.1 -e $seed -r ${denModels[$den_i]} 2>/dev/null		
+		java $JAVA_OPTS -cp ../dist-gen/fr.inria.atlanmod.dag.jar:$HADOOP_CLASSPATH fr.inria.atlanmod.dag.instantiator.Launcher -u $suff -n 1 -s ${sizeModels[$index]} -v 0.1 -e $seed -r ${denModels[$den_i]} 	
 		#iterating the output folder to run the transformation
 		for i in `seq 1 $iter`
 			do

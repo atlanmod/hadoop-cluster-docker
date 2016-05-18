@@ -44,6 +44,9 @@ chmod +x ~/start-ssh-serf.sh && \
 chmod +x ~/dist/dist-gen/run.sh && \
 chmod +x ~/dist/dist-trans/run.sh && \
 chmod +x ~/dist/dist-trans/run-all.sh && \
+chmod +x ~/dist/dist-trans/run-all-exp1.sh && \
+chmod +x ~/dist/dist-trans/run-all-exp2.sh && \
+chmod +x ~/dist/dist-trans/run-all-exp3.sh && \
 chmod +x ~/dist/dist-trans/experiments-data/average.sh && \
 chmod +x ~/dist/dist-trans/experiments-data/gen-data.sh && \
 chmod +x ~/dist/dist-trans/experiments-data/gen-all-data.sh && \
