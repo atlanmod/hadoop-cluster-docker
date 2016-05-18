@@ -14,7 +14,7 @@
 
   <property>
         <name>dfs.replication</name>
-        <value>2</value>
+        <value>1</value>
   </property>
   
    <property>
