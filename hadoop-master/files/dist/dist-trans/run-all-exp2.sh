@@ -21,7 +21,7 @@ iter=3 # number of iteration per transformation
 declare -a denModels=(  '6' '12' '18' )
 # average size of models  
 #sizeModels=(1000)
-declare -a sizeModels=( '100' '1000' '2000' '5000' '10000' )
+declare -a sizeModels=( '100000' '50000' '20000' '10000' '5000')
 #sizeModels=(1000)
 declare -a mappers=8
 

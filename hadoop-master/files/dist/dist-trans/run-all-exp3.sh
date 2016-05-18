@@ -20,7 +20,7 @@ density=6 # density of the graph
 #declare -a numModels=( '1' '1' '1' '1' )
 # average size of models  
 #sizeModels=(1000^6)
-declare -a sizeModels=( '100' '1000' '2000' '5000' '10000' )
+declare -a sizeModels=( '100000' '50000' '20000' '10000' '5000' )
 #sizeModels=(1000^6)
 declare -a mappers=( '4' '8' '16' )
 #experiments folder
