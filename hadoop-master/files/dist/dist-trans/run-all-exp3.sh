@@ -25,7 +25,7 @@ declare -a sizeModels=( '100000' '50000' '20000' '10000' '5000' )
 declare -a mappers=( '4' '8' '16' )
 #experiments folder
 EXP=experiments-data-3
-JAVA_OPTS="-Xmx4g"
+JAVA_OPTS="-Xmx32g"
 
 #####################################
 #classpath related arguments

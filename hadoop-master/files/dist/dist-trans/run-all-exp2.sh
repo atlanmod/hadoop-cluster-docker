@@ -33,7 +33,7 @@ EXP=experiments-data-2
 #classpath related arguments
 #####################################
 GENJARS=libs-gen/*.jar
-JAVA_OPTS="-Xmx4g"
+JAVA_OPTS="-Xmx32g"
 echo 'Starting benchmark with classpath: '$GENJARS
 
 mkdir $EXP
