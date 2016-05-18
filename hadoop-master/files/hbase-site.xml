@@ -50,7 +50,12 @@
    <name>hbase.rpc.timeout</name>
    <value>300000</value>
   </property>
-
+  <property>
+    <name>hbase.master.logcleaner.ttl</name>
+    <value>60</value>
+    <description>Maximum time a HLog can stay in the .oldlogdir directory,
+    after which it will be cleaned by a Master thread.</description>
+  </property>
   <property>
     <name>hbase.zookeeper.quorum</name>
 <value>master.mondo.com,slave1.mondo.com,slave2.mondo.com</value>
