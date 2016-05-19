@@ -53,7 +53,8 @@ chmod +x ~/dist/dist-trans/experiments-data/gen-all-data.sh && \
 chmod +x ~/dist/dist-trans/experiments-data/merge-data.sh && \
 chmod +x ~/dist/dist-trans/experiments-data/speedup.sh && \
 chmod +x ~/dist/dist-trans/experiments-data/boxplotter.sh && \
-chmod 1777 tmp
+chmod 1777 tmp &&\
+mkdir /usr/local/hbase/zookeeper
 
 # format namenode
 RUN /usr/local/hadoop/bin/hdfs namenode -format
