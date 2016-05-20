@@ -52,7 +52,7 @@
   </property>
   <property>
     <name>hbase.master.logcleaner.ttl</name>
-    <value>60</value>
+    <value>600</value>
     <description>Maximum time a HLog can stay in the .oldlogdir directory,
     after which it will be cleaned by a Master thread.</description>
   </property>
