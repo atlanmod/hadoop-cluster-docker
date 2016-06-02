@@ -11,6 +11,12 @@ While no changes have been made on the original serf-dnsmasq, hadoop-base was ex
 Further changes that have been carried out relate to the **hadoop-(master|slave)** images. In particular, hbase related configuration files have been added, and respective ports have been exposed.
 
 # How to use
+
+##Prerequisites
+1. [Docker](https://www.docker.com/)
+2. [Git](https://git-scm.com/)
+3. [Git lfs](https://git-lfs.github.com/)
+
 ## Building the images
 
 By default, the configuration files provided in this repository enable the deployment of a cluster having 1 **master** and up to 8 **slave** containers. Steps on how to resize the cluster are described below.
@@ -56,5 +62,8 @@ in order for the changes to be propagated in the docker images, you should rebui
 ./resize-cluster.sh n
 ```
 
+#Using the cluster in [AWS](https://console.aws.amazon.com)
+
+As a proof of concept we tested our deployment in 
 
 **N.B**: This fork contains data related to an experiment.
