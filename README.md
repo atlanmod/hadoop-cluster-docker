@@ -64,6 +64,22 @@ in order for the changes to be propagated in the docker images, you should rebui
 
 #Using the cluster in [AWS](https://console.aws.amazon.com)
 
-As a proof of concept we tested our deployment in 
+As a proof of concept we tested our deployment in in a AWS instance of type r3.4xlarge type.
+In order to ease the installation of Docker, it is recommended to choose Linux as OS.
+Hereafter, we will walk you through the AWS instance confiuration and the cluster deployment.
+
+
+
+## Installing docker
+
+1. To install docker please follow the instructions provided in the official [documentation](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
+2. Change imge installation directopry to point to the directory you just mounted as illustrated in this [blog](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+## Installing Git and Git lfs
+
+1. Instrction on how to install git can be found in this [link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+2. Instruction on how to install git lfs can be found [here](https://git-lfs.github.com/).
+
+
 
 **N.B**: This fork contains data related to an experiment.
