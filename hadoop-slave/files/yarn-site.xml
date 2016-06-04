@@ -37,12 +37,12 @@
    </property>
    <property>
         <name>yarn.scheduler.maximum-allocation-vcores</name>
-        <value>2</value>
+        <value>8</value>
         <description>The maximum allocation for every container request at the RM, in terms of virtual CPU cores. Requests higher than this won't take effect, and will get capped to this value.</description>
    </property>
    <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>10240</value>
+        <value>16384</value>
         <description>Physical memory, in MB, to be made available to running containers</description>
   </property>
   <property>

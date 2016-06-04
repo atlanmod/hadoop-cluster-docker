@@ -32,14 +32,14 @@
   </property>
   <property>
     <name>hbase.hregion.max.filesize</name>
-    <value>268435456</value>
+    <value>67108864</value>
     <description>
     Maximum HFile size. If the sum of the sizes of a region's HFiles has grown to exceed this
     value, the region is split in two.</description>
   </property>
 <property>
     <name>hbase.hregion.memstore.flush.size</name>
-    <value>67108864</value>
+    <value>16777216</value>
     <description>
     Memstore will be flushed to disk if size of the memstore
     exceeds this number of bytes.  Value is checked by a thread that runs
