@@ -42,6 +42,9 @@ chmod +x ~/stop-hadoop.sh && \
 chmod +x ~/run-wordcount.sh && \
 chmod +x ~/start-ssh-serf.sh && \
 chmod +x ~/dist/dist-gen/run.sh && \
+chmod +x ~/dist/dist-trans/run-demo.sh && \
+chmod +x ~/dist/dist-trans/run-demo-single.sh && \
+chmod +x ~/dist/dist-trans/gen-dag.sh && \
 chmod +x ~/dist/dist-trans/run.sh && \
 chmod +x ~/dist/dist-trans/run-all.sh && \
 chmod +x ~/dist/dist-trans/run-all-exp1.sh && \
