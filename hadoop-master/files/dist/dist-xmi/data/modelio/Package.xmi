@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m18:Package
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:m18="modelio://uml/statik"
+    xsi:schemaLocation="modelio://uml/statik /generator.data/data/modelio.ecore#/18"
+    Name="pck">
+  <OwnedElement
+      xsi:type="m18:Class"
+      Name="cls0"/>
+  <OwnedElement
+      xsi:type="m18:Class"
+      Name="cls1">
+    <OwnedOperation
+        Name="op1"/>
+    <OwnedOperation
+        Name="op2"/>
+  </OwnedElement>
+</m18:Package>

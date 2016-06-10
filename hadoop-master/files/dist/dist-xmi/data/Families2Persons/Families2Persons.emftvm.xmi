@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ASCII"?>
+<emftvm:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emftvm="http://www.eclipse.org/m2m/atl/2011/EMFTVM" name="Families2Persons" sourceName="Families2Persons.atl">
+  <features xsi:type="emftvm:Field" name="familyName" type="String" typeModel="#native" context="Member" contextModel="Families">
+    <initialiser maxLocals="1" maxStack="1">
+      <code xsi:type="emftvm:Load" lineNumber="//@features.0/@initialiser/@lineNumbers.4" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.3" fieldname="familyFather"/>
+      <code xsi:type="emftvm:Isnull" lineNumber="//@features.0/@initialiser/@lineNumbers.2"/>
+      <code xsi:type="emftvm:Not" lineNumber="//@features.0/@initialiser/@lineNumbers.1"/>
+      <code xsi:type="emftvm:Ifn" lineNumber="//@features.0/@initialiser/@lineNumbers.0" offset="9"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@features.0/@initialiser/@lineNumbers.7" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.6" fieldname="familyFather"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.5" fieldname="lastName"/>
+      <code xsi:type="emftvm:Goto" lineNumber="//@features.0/@initialiser/@lineNumbers.0" offset="30"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@features.0/@initialiser/@lineNumbers.12" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.11" fieldname="familyMother"/>
+      <code xsi:type="emftvm:Isnull" lineNumber="//@features.0/@initialiser/@lineNumbers.10"/>
+      <code xsi:type="emftvm:Not" lineNumber="//@features.0/@initialiser/@lineNumbers.9"/>
+      <code xsi:type="emftvm:Ifn" lineNumber="//@features.0/@initialiser/@lineNumbers.8" offset="18"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@features.0/@initialiser/@lineNumbers.15" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.14" fieldname="familyMother"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.13" fieldname="lastName"/>
+      <code xsi:type="emftvm:Goto" lineNumber="//@features.0/@initialiser/@lineNumbers.8" offset="30"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@features.0/@initialiser/@lineNumbers.20" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.19" fieldname="familySon"/>
+      <code xsi:type="emftvm:Isnull" lineNumber="//@features.0/@initialiser/@lineNumbers.18"/>
+      <code xsi:type="emftvm:Not" lineNumber="//@features.0/@initialiser/@lineNumbers.17"/>
+      <code xsi:type="emftvm:Ifn" lineNumber="//@features.0/@initialiser/@lineNumbers.16" offset="27"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@features.0/@initialiser/@lineNumbers.23" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.22" fieldname="familySon"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.21" fieldname="lastName"/>
+      <code xsi:type="emftvm:Goto" lineNumber="//@features.0/@initialiser/@lineNumbers.16" offset="30"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@features.0/@initialiser/@lineNumbers.26" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.25" fieldname="familyDaughter"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.0/@initialiser/@lineNumbers.24" fieldname="lastName"/>
+      <lineNumbers startLine="9" startColumn="2" endLine="21" endColumn="7" instructions="//@features.0/@initialiser/@code.4 //@features.0/@initialiser/@code.8"/>
+      <lineNumbers startLine="9" startColumn="5" endLine="9" endColumn="43" instructions="//@features.0/@initialiser/@code.3"/>
+      <lineNumbers startLine="9" startColumn="9" endLine="9" endColumn="43" instructions="//@features.0/@initialiser/@code.2"/>
+      <lineNumbers startLine="9" startColumn="9" endLine="9" endColumn="26" instructions="//@features.0/@initialiser/@code.1"/>
+      <lineNumbers startLine="9" startColumn="9" endLine="9" endColumn="13" instructions="//@features.0/@initialiser/@code.0"/>
+      <lineNumbers startLine="10" startColumn="3" endLine="10" endColumn="29" instructions="//@features.0/@initialiser/@code.7"/>
+      <lineNumbers startLine="10" startColumn="3" endLine="10" endColumn="20" instructions="//@features.0/@initialiser/@code.6"/>
+      <lineNumbers startLine="10" startColumn="3" endLine="10" endColumn="7" instructions="//@features.0/@initialiser/@code.5"/>
+      <lineNumbers startLine="12" startColumn="3" endLine="20" endColumn="8" instructions="//@features.0/@initialiser/@code.13 //@features.0/@initialiser/@code.17"/>
+      <lineNumbers startLine="12" startColumn="6" endLine="12" endColumn="44" instructions="//@features.0/@initialiser/@code.12"/>
+      <lineNumbers startLine="12" startColumn="10" endLine="12" endColumn="44" instructions="//@features.0/@initialiser/@code.11"/>
+      <lineNumbers startLine="12" startColumn="10" endLine="12" endColumn="27" instructions="//@features.0/@initialiser/@code.10"/>
+      <lineNumbers startLine="12" startColumn="10" endLine="12" endColumn="14" instructions="//@features.0/@initialiser/@code.9"/>
+      <lineNumbers startLine="13" startColumn="4" endLine="13" endColumn="30" instructions="//@features.0/@initialiser/@code.16"/>
+      <lineNumbers startLine="13" startColumn="4" endLine="13" endColumn="21" instructions="//@features.0/@initialiser/@code.15"/>
+      <lineNumbers startLine="13" startColumn="4" endLine="13" endColumn="8" instructions="//@features.0/@initialiser/@code.14"/>
+      <lineNumbers startLine="15" startColumn="4" endLine="19" endColumn="9" instructions="//@features.0/@initialiser/@code.22 //@features.0/@initialiser/@code.26"/>
+      <lineNumbers startLine="15" startColumn="7" endLine="15" endColumn="42" instructions="//@features.0/@initialiser/@code.21"/>
+      <lineNumbers startLine="15" startColumn="11" endLine="15" endColumn="42" instructions="//@features.0/@initialiser/@code.20"/>
+      <lineNumbers startLine="15" startColumn="11" endLine="15" endColumn="25" instructions="//@features.0/@initialiser/@code.19"/>
+      <lineNumbers startLine="15" startColumn="11" endLine="15" endColumn="15" instructions="//@features.0/@initialiser/@code.18"/>
+      <lineNumbers startLine="16" startColumn="5" endLine="16" endColumn="28" instructions="//@features.0/@initialiser/@code.25"/>
+      <lineNumbers startLine="16" startColumn="5" endLine="16" endColumn="19" instructions="//@features.0/@initialiser/@code.24"/>
+      <lineNumbers startLine="16" startColumn="5" endLine="16" endColumn="9" instructions="//@features.0/@initialiser/@code.23"/>
+      <lineNumbers startLine="18" startColumn="5" endLine="18" endColumn="33" instructions="//@features.0/@initialiser/@code.29"/>
+      <lineNumbers startLine="18" startColumn="5" endLine="18" endColumn="24" instructions="//@features.0/@initialiser/@code.28"/>
+      <lineNumbers startLine="18" startColumn="5" endLine="18" endColumn="9" instructions="//@features.0/@initialiser/@code.27"/>
+      <localVariables name="self" type="Member" typeModel="Families" slot="0" startInstructionIndex="0" endInstructionIndex="29"/>
+    </initialiser>
+  </features>
+  <features xsi:type="emftvm:Operation" name="isFemale" type="Boolean" typeModel="#native" context="Member" contextModel="Families">
+    <body maxLocals="1" maxStack="1">
+      <code xsi:type="emftvm:Load" lineNumber="//@features.1/@body/@lineNumbers.4" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.1/@body/@lineNumbers.3" fieldname="familyMother"/>
+      <code xsi:type="emftvm:Isnull" lineNumber="//@features.1/@body/@lineNumbers.2"/>
+      <code xsi:type="emftvm:Not" lineNumber="//@features.1/@body/@lineNumbers.1"/>
+      <code xsi:type="emftvm:Ifn" lineNumber="//@features.1/@body/@lineNumbers.0" offset="7"/>
+      <code xsi:type="emftvm:Pusht" lineNumber="//@features.1/@body/@lineNumbers.5"/>
+      <code xsi:type="emftvm:Goto" lineNumber="//@features.1/@body/@lineNumbers.0" offset="15"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@features.1/@body/@lineNumbers.10" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@features.1/@body/@lineNumbers.9" fieldname="familyDaughter"/>
+      <code xsi:type="emftvm:Isnull" lineNumber="//@features.1/@body/@lineNumbers.8"/>
+      <code xsi:type="emftvm:Not" lineNumber="//@features.1/@body/@lineNumbers.7"/>
+      <code xsi:type="emftvm:Ifn" lineNumber="//@features.1/@body/@lineNumbers.6" offset="14"/>
+      <code xsi:type="emftvm:Pusht" lineNumber="//@features.1/@body/@lineNumbers.11"/>
+      <code xsi:type="emftvm:Goto" lineNumber="//@features.1/@body/@lineNumbers.6" offset="15"/>
+      <code xsi:type="emftvm:Pushf" lineNumber="//@features.1/@body/@lineNumbers.12"/>
+      <lineNumbers startLine="25" startColumn="2" endLine="33" endColumn="7" instructions="//@features.1/@body/@code.4 //@features.1/@body/@code.6"/>
+      <lineNumbers startLine="25" startColumn="5" endLine="25" endColumn="43" instructions="//@features.1/@body/@code.3"/>
+      <lineNumbers startLine="25" startColumn="9" endLine="25" endColumn="43" instructions="//@features.1/@body/@code.2"/>
+      <lineNumbers startLine="25" startColumn="9" endLine="25" endColumn="26" instructions="//@features.1/@body/@code.1"/>
+      <lineNumbers startLine="25" startColumn="9" endLine="25" endColumn="13" instructions="//@features.1/@body/@code.0"/>
+      <lineNumbers startLine="26" startColumn="3" endLine="26" endColumn="7" instructions="//@features.1/@body/@code.5"/>
+      <lineNumbers startLine="28" startColumn="3" endLine="32" endColumn="8" instructions="//@features.1/@body/@code.11 //@features.1/@body/@code.13"/>
+      <lineNumbers startLine="28" startColumn="6" endLine="28" endColumn="46" instructions="//@features.1/@body/@code.10"/>
+      <lineNumbers startLine="28" startColumn="10" endLine="28" endColumn="46" instructions="//@features.1/@body/@code.9"/>
+      <lineNumbers startLine="28" startColumn="10" endLine="28" endColumn="29" instructions="//@features.1/@body/@code.8"/>
+      <lineNumbers startLine="28" startColumn="10" endLine="28" endColumn="14" instructions="//@features.1/@body/@code.7"/>
+      <lineNumbers startLine="29" startColumn="4" endLine="29" endColumn="8" instructions="//@features.1/@body/@code.12"/>
+      <lineNumbers startLine="31" startColumn="4" endLine="31" endColumn="9" instructions="//@features.1/@body/@code.14"/>
+      <localVariables name="self" type="Member" typeModel="Families" slot="0" startInstructionIndex="0" endInstructionIndex="14"/>
+    </body>
+  </features>
+  <features xsi:type="emftvm:Operation" name="main" type="Object" typeModel="#native" static="true" context="ExecEnv" contextModel="EMFTVM">
+    <body maxLocals="0" maxStack="0"/>
+  </features>
+  <rules name="Member2Male" mode="automaticSingle" default="true">
+    <inputElements name="s" type="Member" typeModel="Families"/>
+    <outputElements name="t" type="Male" typeModel="Persons">
+      <models>OUT</models>
+    </outputElements>
+    <matcher maxLocals="1" maxStack="1">
+      <code xsi:type="emftvm:Load" lineNumber="//@rules.0/@matcher/@lineNumbers.2" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Invoke" lineNumber="//@rules.0/@matcher/@lineNumbers.1" opname="isFemale"/>
+      <code xsi:type="emftvm:Not" lineNumber="//@rules.0/@matcher/@lineNumbers.0"/>
+      <lineNumbers startLine="38" startColumn="24" endLine="38" endColumn="40" instructions="//@rules.0/@matcher/@code.2"/>
+      <lineNumbers startLine="38" startColumn="28" endLine="38" endColumn="40" instructions="//@rules.0/@matcher/@code.1"/>
+      <lineNumbers startLine="38" startColumn="28" endLine="38" endColumn="29" instructions="//@rules.0/@matcher/@code.0"/>
+      <localVariables name="s" type="Member" typeModel="Families" slot="0" startInstructionIndex="0" endInstructionIndex="2"/>
+    </matcher>
+    <applier maxLocals="3" maxStack="3">
+      <code xsi:type="emftvm:Load" lineNumber="//@rules.0/@applier/@lineNumbers.0" cbOffset="0" localVariableIndex="2"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@rules.0/@applier/@lineNumbers.4" cbOffset="0" localVariableIndex="1"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@rules.0/@applier/@lineNumbers.3" fieldname="firstName"/>
+      <code xsi:type="emftvm:Push" lineNumber="//@rules.0/@applier/@lineNumbers.5" stringValue=" "/>
+      <code xsi:type="emftvm:Invoke" lineNumber="//@rules.0/@applier/@lineNumbers.2" argcount="1" opname="+"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@rules.0/@applier/@lineNumbers.7" cbOffset="0" localVariableIndex="1"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@rules.0/@applier/@lineNumbers.6" fieldname="familyName"/>
+      <code xsi:type="emftvm:Invoke" lineNumber="//@rules.0/@applier/@lineNumbers.1" argcount="1" opname="+"/>
+      <code xsi:type="emftvm:Invoke" lineNumber="//@rules.0/@applier/@lineNumbers.0" opname="resolve"/>
+      <code xsi:type="emftvm:Set" lineNumber="//@rules.0/@applier/@lineNumbers.0" fieldname="fullName"/>
+      <lineNumbers startLine="41" startColumn="4" endLine="41" endColumn="48" instructions="//@rules.0/@applier/@code.0 //@rules.0/@applier/@code.8 //@rules.0/@applier/@code.9"/>
+      <lineNumbers startLine="41" startColumn="16" endLine="41" endColumn="48" instructions="//@rules.0/@applier/@code.7"/>
+      <lineNumbers startLine="41" startColumn="16" endLine="41" endColumn="33" instructions="//@rules.0/@applier/@code.4"/>
+      <lineNumbers startLine="41" startColumn="16" endLine="41" endColumn="27" instructions="//@rules.0/@applier/@code.2"/>
+      <lineNumbers startLine="41" startColumn="16" endLine="41" endColumn="17" instructions="//@rules.0/@applier/@code.1"/>
+      <lineNumbers startLine="41" startColumn="30" endLine="41" endColumn="33" instructions="//@rules.0/@applier/@code.3"/>
+      <lineNumbers startLine="41" startColumn="36" endLine="41" endColumn="48" instructions="//@rules.0/@applier/@code.6"/>
+      <lineNumbers startLine="41" startColumn="36" endLine="41" endColumn="37" instructions="//@rules.0/@applier/@code.5"/>
+      <localVariables name="__trace__" type="TraceLink" typeModel="TRACE" slot="0" startInstructionIndex="0" endInstructionIndex="9"/>
+      <localVariables name="s" type="Member" typeModel="Families" slot="1" startInstructionIndex="0" endInstructionIndex="9"/>
+      <localVariables name="t" type="Male" typeModel="Persons" slot="2" startInstructionIndex="0" endInstructionIndex="9"/>
+    </applier>
+  </rules>
+  <rules name="Member2Female" mode="automaticSingle" default="true">
+    <inputElements name="s" type="Member" typeModel="Families"/>
+    <outputElements name="t" type="Female" typeModel="Persons">
+      <models>OUT</models>
+    </outputElements>
+    <matcher maxLocals="1" maxStack="1">
+      <code xsi:type="emftvm:Load" lineNumber="//@rules.1/@matcher/@lineNumbers.1" cbOffset="0" localVariableIndex="0"/>
+      <code xsi:type="emftvm:Invoke" lineNumber="//@rules.1/@matcher/@lineNumbers.0" opname="isFemale"/>
+      <lineNumbers startLine="48" startColumn="24" endLine="48" endColumn="36" instructions="//@rules.1/@matcher/@code.1"/>
+      <lineNumbers startLine="48" startColumn="24" endLine="48" endColumn="25" instructions="//@rules.1/@matcher/@code.0"/>
+      <localVariables name="s" type="Member" typeModel="Families" slot="0" startInstructionIndex="0" endInstructionIndex="1"/>
+    </matcher>
+    <applier maxLocals="3" maxStack="3">
+      <code xsi:type="emftvm:Load" lineNumber="//@rules.1/@applier/@lineNumbers.0" cbOffset="0" localVariableIndex="2"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@rules.1/@applier/@lineNumbers.4" cbOffset="0" localVariableIndex="1"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@rules.1/@applier/@lineNumbers.3" fieldname="firstName"/>
+      <code xsi:type="emftvm:Push" lineNumber="//@rules.1/@applier/@lineNumbers.5" stringValue=" "/>
+      <code xsi:type="emftvm:Invoke" lineNumber="//@rules.1/@applier/@lineNumbers.2" argcount="1" opname="+"/>
+      <code xsi:type="emftvm:Load" lineNumber="//@rules.1/@applier/@lineNumbers.7" cbOffset="0" localVariableIndex="1"/>
+      <code xsi:type="emftvm:Get" lineNumber="//@rules.1/@applier/@lineNumbers.6" fieldname="familyName"/>
+      <code xsi:type="emftvm:Invoke" lineNumber="//@rules.1/@applier/@lineNumbers.1" argcount="1" opname="+"/>
+      <code xsi:type="emftvm:Invoke" lineNumber="//@rules.1/@applier/@lineNumbers.0" opname="resolve"/>
+      <code xsi:type="emftvm:Set" lineNumber="//@rules.1/@applier/@lineNumbers.0" fieldname="fullName"/>
+      <lineNumbers startLine="51" startColumn="4" endLine="51" endColumn="48" instructions="//@rules.1/@applier/@code.0 //@rules.1/@applier/@code.8 //@rules.1/@applier/@code.9"/>
+      <lineNumbers startLine="51" startColumn="16" endLine="51" endColumn="48" instructions="//@rules.1/@applier/@code.7"/>
+      <lineNumbers startLine="51" startColumn="16" endLine="51" endColumn="33" instructions="//@rules.1/@applier/@code.4"/>
+      <lineNumbers startLine="51" startColumn="16" endLine="51" endColumn="27" instructions="//@rules.1/@applier/@code.2"/>
+      <lineNumbers startLine="51" startColumn="16" endLine="51" endColumn="17" instructions="//@rules.1/@applier/@code.1"/>
+      <lineNumbers startLine="51" startColumn="30" endLine="51" endColumn="33" instructions="//@rules.1/@applier/@code.3"/>
+      <lineNumbers startLine="51" startColumn="36" endLine="51" endColumn="48" instructions="//@rules.1/@applier/@code.6"/>
+      <lineNumbers startLine="51" startColumn="36" endLine="51" endColumn="37" instructions="//@rules.1/@applier/@code.5"/>
+      <localVariables name="__trace__" type="TraceLink" typeModel="TRACE" slot="0" startInstructionIndex="0" endInstructionIndex="9"/>
+      <localVariables name="s" type="Member" typeModel="Families" slot="1" startInstructionIndex="0" endInstructionIndex="9"/>
+      <localVariables name="t" type="Female" typeModel="Persons" slot="2" startInstructionIndex="0" endInstructionIndex="9"/>
+    </applier>
+  </rules>
+  <inputModels modelName="IN" metaModelName="Families"/>
+  <outputModels modelName="OUT" metaModelName="Persons"/>
+</emftvm:Module>
