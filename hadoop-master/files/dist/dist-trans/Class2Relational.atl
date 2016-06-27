@@ -1,0 +1,127 @@
+-- @atlcompiler emftvm
+
+module Class2Relational;
+create OUT : Relational from IN : Class;
+
+
+
+-- if there is a configuration problem with the library string,
+-- delete the two firstToLower() operations and you no longer need the library "strings"
+-- the transfomarion will execute 
+
+
+-- inheritance not supported yet
+
+-- issue: choose an object-id Type (Integer, String?).
+-- We choose Integer here, assuming this type is defined in the source model.
+
+-- global variable
+-- context
+-- @TOFIX what if there is no Interger Type in the source model ?? 
+		
+helper def: objectIdType : Class!DataType =
+	--Class!DataType.allInstances()->select(e | e.name = 'Integer')->first();
+	Class!DataType.allInstances()->first();
+	
+helper context Class!Package def : getMultivalued : Sequence(Class!Attribute) = 
+	self.classes -> reject (c | c.isAbstract) -> collect (cc | cc.attr -> select (a | a.multiValued)) -> flatten();
+
+rule Package2Schema {
+	from 
+		p : Class!Package
+	to 
+		s : Relational!Schema (
+			tables <- p.classes-> reject(c | c.isAbstract),
+			types <- p.types
+		)
+}
+rule Class2Table {
+	
+	from
+		c : Class!Class (not c.isAbstract)
+	to
+		out : Relational!Table (
+			name <- c.name,
+			-- Columns are generated from Attributes in another rule not explicitly called here !
+			col <- Sequence {key}->union(c.attr->select(e | not e.multiValued)),
+			key <- Set {key}
+		),
+		key : Relational!Column (
+			name <- 'objectId',
+			type <- thisModule.objectIdType
+		)
+}
+
+rule DataType2Type {
+	from
+		dt : Class!DataType
+	to
+		out : Relational!Type (
+			name <- dt.name
+		)
+}
+
+rule DataTypeAttribute2Column {
+	from
+		a : Class!Attribute (
+			a.type.oclIsKindOf(Class!DataType) and not a.multiValued
+		)
+	to
+		out : Relational!Column (
+			name <- a.name,
+			type <- a.type
+		)
+}
+
+rule MultiValuedDataTypeAttribute2Column {
+	from
+		a : Class!Attribute (
+			a.type.oclIsKindOf(Class!DataType) and a.multiValued
+		)
+	to
+		out : Relational!Table (
+			name <- a.owner.name + '_' + a.name,
+			col <- Sequence {id, value}
+		),
+		id : Relational!Column (
+			name <- a.owner.name + 'Id',
+			type <- thisModule.objectIdType
+		),
+		value : Relational!Column (
+			name <- a.name,
+			type <- a.type
+		)
+}
+
+rule ClassAttribute2Column {
+	from
+		a : Class!Attribute (
+			a.type.oclIsKindOf(Class!Class) and not a.multiValued
+		)
+	to
+		foreignKey : Relational!Column (
+			name <- a.name + 'Id',
+			type <- thisModule.objectIdType
+		)
+}
+
+rule MultiValuedClassAttribute2Column {
+	from
+		a : Class!Attribute (
+			a.type.oclIsKindOf(Class!Class) and a.multiValued
+		)
+	to
+		t : Relational!Table (
+			name <- a.owner.name + '_' + a.name,
+			col <- Sequence {id, foreignKey}
+		),
+		id : Relational!Column (
+			name <- a.owner.name + 'Id',			
+			type <- thisModule.objectIdType
+		),
+		foreignKey : Relational!Column (
+			name <- a.name + 'Id',
+			type <- thisModule.objectIdType
+		)
+}
+
