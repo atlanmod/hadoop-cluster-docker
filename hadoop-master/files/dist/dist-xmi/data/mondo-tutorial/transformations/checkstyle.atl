@@ -1,0 +1,141 @@
+-- @atlcompiler emftvm
+-- @path JAVA=../../models/java.ecore
+-- @path CHK=../../models/anomalies.ecore
+
+
+module checkstyle;
+
+create OUT : CHK from IN : JAVA;
+
+helper def : ALLOWED_CAPITAL_LETTERS : Integer = 3;
+
+helper def : TYPE : String = 'Boolean';
+
+helper def : ALLOWED_CAPITAL_LETTERS_AS_STRING : String = '3';
+-- default is ''ALLOWEDCAPITALLETTERS''
+helper def : concatValueAsString (prefix : String) : String =
+	let value : String = thisModule.ALLOWED_CAPITAL_LETTERS_AS_STRING in
+	prefix.concat(value);
+
+helper context JAVA!ClassInstanceCreation def : checkInstantiation : Boolean =
+	self.type.type.name = thisModule.TYPE;
+
+helper def : repeatCapitalLetter(current : Integer, output : String) : String =
+	if current = 0 then
+		output.concat('[A-Z]')
+	else
+		thisModule.repeatCapitalLetter(current-1, output.concat('[A-Z]'))
+	endif;
+
+helper context OclAny def : getContainer : OclAny =
+	if self.oclIsKindOf(JAVA!AbstractVariablesContainer) then
+		self
+	else
+		if self.oclIsTypeOf(JAVA!FieldDeclaration) then
+			self
+		else
+			if self.oclIsTypeOf(JAVA!Model) then
+				OclUndefined
+			else
+				self.refImmediateComposite().getContainer
+			endif
+		endif
+	endif;
+
+helper context JAVA!Modifier def : isStatic : Boolean =
+	self.static;
+
+helper context JAVA!Modifier def : isFinal : Boolean =
+	if not self.inheritance.oclIsUndefined() then
+		self.inheritance.toString() = 'final'
+	else
+		false
+	endif;
+
+helper context JAVA!BodyDeclaration def : checkAbbreviation : Boolean =
+	if not self.modifier.oclIsUndefined() then
+		if self.modifier.isStatic or self.modifier.isFinal then 
+			true 
+		else
+			 not (self.name.replaceAll('.*' + thisModule.repeatCapitalLetter(thisModule.ALLOWED_CAPITAL_LETTERS, '') + '.*', '@').contains('@'))
+		endif
+	else
+		self.name.replaceAll('.*' + thisModule.repeatCapitalLetter(thisModule.ALLOWED_CAPITAL_LETTERS, '') + '.*', '@').contains('@')
+	endif;
+
+helper context JAVA!VariableDeclaration def : isStatic : Boolean =
+	let container : OclAny = 
+							if self.oclIsTypeOf(JAVA!SingleVariableDeclaration) then 
+								self 
+							else 
+								self.getContainer 
+							endif in
+	if not container.oclIsUndefined() then
+		if not container.modifier.oclIsUndefined() then
+			container.modifier.static		
+		else
+			false
+		endif
+	else
+		false
+	endif;
+
+helper context JAVA!VariableDeclaration def : isFinal : Boolean =
+	let container : JAVA!AbstractVariablesContainer = self.getContainer in
+	if not container.oclIsUndefined() then
+		if not container.modifier.oclIsUndefined() then
+			container.modifier.isFinal
+		else
+			false
+		endif
+	else
+		false
+	endif;
+
+helper context JAVA!VariableDeclaration def : checkAbbreviation : Boolean =
+	if self.isStatic or self.isFinal or self.oclIsTypeOf(JAVA!EnumConstantDeclaration) then
+		true
+	else
+		not ( self.name.replace('.*' + thisModule.repeatCapitalLetter(thisModule.ALLOWED_CAPITAL_LETTERS, '') + '.*', '@').contains('@'))
+	endif;
+
+
+rule ClassInstanceCreation {
+	from
+		s: JAVA!ClassInstanceCreation (s.checkInstantiation)
+	to
+		t : CHK!BooleanInstantiation (
+			description <- 'calling new ' + thisModule.TYPE + '() causes memory allocation',
+			trace <- Sequence{s}	
+		)
+}		
+
+rule allowedAbbreviationTypeDeclaration {
+	from
+		s: JAVA!TypeDeclaration (not s.proxy and not s.checkAbbreviation)
+	to
+		t: CHK!AbbreviationAsWordInName (
+			description <- thisModule.concatValueAsString('more than ') + ' capital letter in class/interface name ' + s.name,
+			trace <- Sequence{s}
+			)
+}
+
+rule allowedAbbreviationAbstractMethodDeclaration {
+	from
+		s: JAVA!AbstractMethodDeclaration (not s.proxy and not s.checkAbbreviation)
+	to
+		t: CHK!AbbreviationAsWordInName (
+			description <- thisModule.concatValueAsString('more than ') + ' capital letter in method name ' + s.name,
+			trace <- Sequence{s}
+			)
+}
+
+rule allowedAbbreviationVariableDeclaration {
+	from
+		s: JAVA!VariableDeclaration (not s.proxy and not s.checkAbbreviation)
+	to
+		t: CHK!AbbreviationAsWordInName (
+			description <- thisModule.concatValueAsString('more than ') + ' capital letter in variable name ' + s.name,
+			trace <- Sequence{s}
+			)
+}

@@ -1,0 +1,37 @@
+-- @atlcompiler emftvm
+
+
+module test;
+
+create OUT : MM from IN : MM;
+
+rule PackageToFactory {
+	from 
+		p : MM!"statik::Package" 
+	to factory : MM!"statik::Class" (
+		Name <- p.Name + 'Factory',
+		OwnedOperation <- p.OwnedElement
+	)
+}
+
+
+rule ClassToOperation {
+	from 
+		c : MM!"statik::Class"
+	
+	to 
+		op : MM!"statik::Operation" (
+			Name <- 'create' + c.Name,
+			Return <- par
+		),
+		
+		par : MM!"statik::Parameter" (
+			Type <- type,
+			Name <- 'return'
+		),
+		
+			type : MM!"statik::Class" (
+			Name <- c.Name	
+		)
+}
+  

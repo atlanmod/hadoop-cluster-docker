@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:class="Class">
+  <class:Class name="ran" isAbstract="true">
+    <attr name="eminglemysteedanu" type="/1"/>
+    <attr name="bedletypsynortedynog" multiValued="true" type="/0"/>
+    <attr name="kimadempu" multiValued="true" type="/0"/>
+    <attr name="tbopeesappolowarto" type="/0"/>
+    <attr name="ynctive" type="/1"/>
+    <attr name="oustinsixylacaputop" type="/0"/>
+    <attr name="eometabl" multiValued="true" type="/0"/>
+  </class:Class>
+  <class:DataType name="atisallwaymparimilk"/>
+</xmi:XMI>

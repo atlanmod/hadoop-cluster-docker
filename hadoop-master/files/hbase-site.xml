@@ -10,7 +10,7 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
+ * 
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
@@ -30,7 +30,21 @@
     <name>hbase.cluster.distributed</name>
     <value>true</value>
   </property>
-  
+  <property>
+    <name>hbase.hregion.max.filesize</name>
+    <value>67108864</value>
+    <description>
+    Maximum HFile size. If the sum of the sizes of a region's HFiles has grown to exceed this
+    value, the region is split in two.</description>
+  </property>
+<property>
+    <name>hbase.hregion.memstore.flush.size</name>
+    <value>16777216</value>
+    <description>
+    Memstore will be flushed to disk if size of the memstore
+    exceeds this number of bytes.  Value is checked by a thread that runs
+    every hbase.server.thread.wakefrequency.</description>
+  </property>
   <property>
     <name>hbase.zookeeper.property.dataDir</name>
     <value>/usr/local/hbase/zookeeper</value>
@@ -50,7 +64,12 @@
    <name>hbase.rpc.timeout</name>
    <value>300000</value>
   </property>
-
+  <property>
+    <name>hbase.master.logcleaner.ttl</name>
+    <value>600</value>
+    <description>Maximum time a HLog can stay in the .oldlogdir directory,
+    after which it will be cleaned by a Master thread.</description>
+  </property>
   <property>
     <name>hbase.zookeeper.quorum</name>
 <value>master.mondo.com,slave1.mondo.com,slave2.mondo.com</value>

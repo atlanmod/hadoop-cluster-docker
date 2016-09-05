@@ -1,0 +1,267 @@
+-- @path GRP=/StructureGraph/metamodels/FlowGraph.ecore
+-- @atlcompiler emftvm
+
+
+module Flow2Data_noRI;
+create OUT : GRP from IN : GRP;
+
+helper def : ALL_FLOWINSTRS : Sequence(GRP!FlowInstr) =  GRP!FlowInstr.allInstances();
+
+helper context GRP!FlowInstr def : getForbidden(var : GRP!Var) : Sequence(GRP!SimpleStmt) =
+	thisModule.ALL_FLOWINSTRS->reject(fi | fi = self)->select(fi | fi.def->exists(d | d = var));
+
+helper context OclAny def : isInALoop : Boolean =
+	if self.oclIsTypeOf(GRP!Loop) then
+		true
+	else
+		if self.oclIsTypeOf(GRP!Method) then
+			false
+		else
+			self.refImmediateComposite().isInALoop
+		endif
+	endif;
+
+helper context GRP!FlowInstr def : getFlowInstrsUsingVar(var : GRP!Var) : Sequence(GRP!SimpleStmt) =
+	thisModule.ALL_FLOWINSTRS->reject(fi | if fi = self then not fi.isInALoop else false endif)
+								->select(fi | fi.use->exists(u | u = var));
+
+helper def : isDefinedBy(start : GRP!FlowInstr, input : Sequence(GRP!FlowInstr), end : GRP!FlowInstr, visited : Sequence(GRP!FlowInstr), forbidden : Sequence(GRP!FlowInstr)) : Boolean =
+	if input->exists(i | i = end) then
+		true
+	else
+		let newInput : Sequence(GRP!FlowInstr) = input->collect(i | i.cfPrev)->flatten()->reject(i | visited->exists(v | v = i) or forbidden->exists(f | f = i)) in
+		if newInput->isEmpty() then
+			false
+		else
+			thisModule.isDefinedBy(start, newInput, end, visited->union(newInput)->asSet()->asSequence(), forbidden)
+		endif
+	endif;
+
+rule Method  {
+	from
+		s : GRP!Method
+	to
+		t : GRP!Method (
+			txt <- s.txt,
+			stmts <- s.stmts,
+			def <- Sequence{},
+			use <- Sequence{},
+			cfNext <- s.cfNext,
+			cfPrev <- s.cfPrev,
+			exit <- s.exit,
+			vars <- Sequence{},
+			dfNext <-	s.def->collect(d | s.getFlowInstrsUsingVar(d)->select(fi | thisModule.isDefinedBy(fi, Sequence{fi}, s, Sequence{}, s.getForbidden(d))))->flatten()
+--			.debug
+--			(
+--				s.txt + ' -> ' +
+--				s.def->collect(d | s.getFlowInstrsUsingVar(d)->select(fi | thisModule.isDefinedBy(fi, Sequence{fi}, s, Sequence{}, s.getForbidden(d))))->flatten()
+--						->collect(cfn | cfn.txt)
+--			)
+		)
+}
+
+
+rule SimpleStmt {
+	from
+		s : GRP!SimpleStmt
+	to
+		t : GRP!SimpleStmt (
+			txt <- s.txt,
+			def <- Sequence{},
+			use <- Sequence{},
+			cfNext <- s.cfNext,
+			cfPrev <- s.cfPrev,
+			dfNext <- s.getFlowInstrsUsingVar(s.def->first())->select(fi | thisModule.isDefinedBy(fi, Sequence{fi}, s, Sequence{}, s.getForbidden(s.def->first())))
+--			.debug
+--			(
+--				s.txt + ' -> ' +
+--				s.getFlowInstrsUsingVar(s.def->first())->select(fi | thisModule.isDefinedBy(fi, Sequence{fi}, s, Sequence{}, s.getForbidden(s.def->first())))
+--													->collect(cfn | cfn.txt)
+--			)
+		)
+}
+
+
+rule Block {
+	from 
+		s : GRP!Block (
+			 s.oclIsTypeOf(GRP!Block) 
+		)		
+	to
+		t : GRP!Block (
+			txt <- s.txt,
+			stmts <- s.stmts	
+		)
+}
+
+-- this rule is abstract 
+--rule Conditional {
+--	from 
+--		s: GRP!Conditional
+--	to	
+--		t: GRP!Conditional (
+--			txt <- s.txt,
+--			expr <- s.expr	
+--		)
+--		
+--}
+
+
+rule If {
+	from 
+		s: GRP!If
+	to
+		t: GRP!If(
+			txt <- s.txt,
+			expr <- s.expr,	
+			else <- s.else,
+			then <- s.then
+		)
+}
+
+
+rule Return {
+	from
+		s : GRP!Return
+	to
+		t : GRP!Return (
+			txt <- s.txt,
+			def <- Sequence{},
+			use <- Sequence{},
+			cfNext <- s.cfNext,
+			cfPrev <- s.cfPrev,
+			dfNext <- s.dfNext
+			)
+}
+
+
+ 
+rule Var {
+	from
+		s : GRP!Var (
+			s.oclIsTypeOf(GRP!Var) 
+		)
+	to
+		t : GRP!Var (
+			txt <- s.txt,
+			definers <:= Sequence{},
+			users <:= Sequence{}
+		)
+}
+
+
+rule Exit {
+	from 
+		s: GRP!Exit
+	to
+		t: GRP!Exit (
+			txt <- s.txt,
+			def <- Sequence{},
+			use <- Sequence{},
+			cfNext <- s.cfNext,
+			cfPrev <- s.cfPrev,
+			dfNext <- s.dfNext
+			)
+}
+
+
+
+rule Loop {
+	from 
+		s: GRP!Loop
+	to	
+		t: GRP!Loop (
+			txt <- s.txt,
+			expr <- s.expr,
+			body <-	s.body
+		)
+}
+
+
+-- this rule is abstract 
+--rule JumpStmt {
+--	from 
+--		s : GRP!JumpStmt
+--	to
+--		t : GRP!JumpStmt (
+--			txt <- s.txt,
+--			def <- Sequence{},
+--			use <- Sequence{},
+--			cfNext <- s.cfNext,
+--			cfPrev <- s.cfPrev,
+--			dfNext <- s.dfNext,
+--			label <- s.label	
+--		)			
+--}
+
+
+
+rule Break {
+	from 
+		s:GRP!Break
+	to
+		t:GRP!Break (
+			txt <- s.txt,
+			def <- Sequence{},
+			use <- Sequence{},
+			cfNext <- s.cfNext,
+			cfPrev <- s.cfPrev,
+			dfNext <- s.dfNext,
+			label <- s.label	
+		)			
+}
+
+
+rule Continue {
+	from  
+		s:GRP!Continue
+	to
+		t:GRP!Continue(
+			txt <- s.txt,
+			def <- Sequence{},
+			use <- Sequence{},
+			cfNext <- s.cfNext,
+			cfPrev <- s.cfPrev,
+			dfNext <- s.dfNext,
+			label <- s.label	
+		)			
+}
+
+
+rule Param {
+	from 
+		s:GRP!Param
+	to
+		t:GRP!Param (
+			txt <- s.txt,
+			definers <:= Sequence{},
+			users <:= Sequence{}	
+		)
+}
+
+
+rule Label {
+	from 
+		s : GRP!Label
+	to 
+		t :GRP!Label (
+			txt <- s.txt,
+			stmt <- s.stmt,
+			jumps <- s.jumps
+		)
+}
+
+
+rule Expr {
+	from 
+		s : GRP!Expr
+	to 
+		t : GRP!Expr (
+			txt <- s.txt,
+			def <- Sequence{},
+			use <- Sequence{},
+			cfNext <- s.cfNext,
+			cfPrev <- s.cfPrev,
+			dfNext <- s.dfNext	
+		)
+}

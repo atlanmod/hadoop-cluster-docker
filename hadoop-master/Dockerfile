@@ -37,23 +37,12 @@ mv /tmp/start-ssh-serf.sh ~/start-ssh-serf.sh
 RUN ln -s ~/dist/dist-trans/libs ~/dist/dist-gen/libs
 
 #chmod bash files 
-RUN chmod +x ~/start-hadoop.sh && \
-chmod +x ~/stop-hadoop.sh && \
-chmod +x ~/run-wordcount.sh && \
-chmod +x ~/start-ssh-serf.sh && \
+RUN chmod +x ~/*.sh && \
 chmod +x ~/dist/dist-gen/run.sh && \
-chmod +x ~/dist/dist-trans/run.sh && \
-chmod +x ~/dist/dist-trans/run-all.sh && \
-chmod +x ~/dist/dist-trans/run-all-exp1.sh && \
-chmod +x ~/dist/dist-trans/run-all-exp2.sh && \
-chmod +x ~/dist/dist-trans/run-all-exp3.sh && \
-chmod +x ~/dist/dist-trans/experiments-data/average.sh && \
-chmod +x ~/dist/dist-trans/experiments-data/gen-data.sh && \
-chmod +x ~/dist/dist-trans/experiments-data/gen-all-data.sh && \
-chmod +x ~/dist/dist-trans/experiments-data/merge-data.sh && \
-chmod +x ~/dist/dist-trans/experiments-data/speedup.sh && \
-chmod +x ~/dist/dist-trans/experiments-data/boxplotter.sh && \
-chmod 1777 tmp
+chmod +x ~/dist/dist-trans/*.sh && \
+chmod +x ~/dist/dist-trans/experiments-data/*.sh && \
+chmod 1777 tmp &&\
+mkdir /usr/local/hbase/zookeeper
 
 # format namenode
 RUN /usr/local/hadoop/bin/hdfs namenode -format

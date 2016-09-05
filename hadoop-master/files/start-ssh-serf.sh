@@ -12,11 +12,6 @@ sleep 5
 
 serf members
 
-sleep 10 
-
-#######
-
-/root/start-hadoop.sh
 
 
 

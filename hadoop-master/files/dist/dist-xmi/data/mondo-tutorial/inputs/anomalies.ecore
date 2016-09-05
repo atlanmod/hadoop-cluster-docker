@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="anomalies" nsURI="http://atlanmod.checkstyles.org" nsPrefix="anomalies">
+  <eClassifiers xsi:type="ecore:EClass" name="Anomaly" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trace" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AvoidStartImport" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstantName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbbreviationAsWordInName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractClassName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AvoidEscapedUnicodeCharacters" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalFinalVariableName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalVariableName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MemberName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StaticVariableName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeName" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnusedImports" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RedundantImport" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterNumber" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RedundantModifier" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AvoidInlineConditionals" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EqualsHashCode" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HiddenField" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MissingSwitchDefault" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RedundantThrows" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimplifyBooleanExpression" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimplifyBooleanReturn" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalClass" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceIsType" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VisibilityModifier" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LooseCoupling" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SignatureDeclareThrowsException" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultLabelNotLastInSwitchStmt" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EqualsNull" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompareObjectsWithEquals" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionLiteralsFirstInComparisons"
+      eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UseEqualsToCompareStrings" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerInstantiation" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ByteInstantiation" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LongInstantiation" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanInstantiation" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ShortInstantiation" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimplifyStartsWith" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnnecessaryReturn" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnconditionalIfStatement" eSuperTypes="#//Anomaly"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnnecessaryFinalModifier" eSuperTypes="#//Anomaly"/>
+</ecore:EPackage>
