@@ -1,7 +1,7 @@
 #!/bin/bash
 
 hadoop_folder="hadoop-2.6.0"
-tag="0.2.0"
+tag="sle16"
 
 if [ $# = 0 ]
 then

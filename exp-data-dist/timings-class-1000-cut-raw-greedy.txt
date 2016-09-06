@@ -1,2 +1,0 @@
-cut: fields and positions are numbered from 1
-Try 'cut --help' for more information.

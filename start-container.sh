@@ -15,7 +15,7 @@ docker ps -a | grep  amineben/hadoop-* | awk '{print $1 }' | xargs -I {} docker 
 # delete old master container and start new master container
 docker rm -f master &> /dev/null
 echo "start master container..."
-docker run -d -t --dns 127.0.0.1 -P  --name master -h master.mondo.com -w /root amineben/hadoop-master:0.2.0 
+docker run -d -t --dns 127.0.0.1 -P  --name master -h master.mondo.com -w /root amineben/hadoop-master:sle16 
 # get the IP address of master container
 FIRST_IP=$(docker inspect --format="{{.NetworkSettings.IPAddress}}" master)
 
@@ -26,7 +26,7 @@ while [ $i -lt $N ]
 do
 	docker rm -f slave$i &> /dev/null
 	echo "start slave$i container..."
-	docker run -d -t --dns 127.0.0.1 -P  --name slave$i -h slave$i.mondo.com -e JOIN_IP=$FIRST_IP amineben/hadoop-slave:0.2.0 
+	docker run -d -t --dns 127.0.0.1 -P  --name slave$i -h slave$i.mondo.com -e JOIN_IP=$FIRST_IP amineben/hadoop-slave:sle16
 	((i++))
 done 
 
