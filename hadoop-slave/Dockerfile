@@ -1,4 +1,4 @@
-FROM amineben/hadoop-base:0.2.0
+FROM amineben/hadoop-base:sle16
 
 MAINTAINER Amine BENELALLAM <amine.benelallam@inria.fr>
 
